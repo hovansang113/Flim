@@ -1,12 +1,16 @@
 <?php
+
+/**
+ * Abstract class Film
+ */
 abstract class Film
 {
-    public  $title;
-    public  $duration;
-    public  $releaseYear;
-    public  $quantity;
-    public  $category;
-    public  $productionCost;
+    protected $title;
+    protected $duration;
+    protected $releaseYear;
+    protected $quantity;
+    protected $category;
+    protected $productionCost;
 
     /**
      * Constructor
@@ -27,14 +31,51 @@ abstract class Film
         $this->productionCost = $productionCost;
     }
 
-    // Abstract method
-    abstract public function showInfo(): void;
+    // Public methods
+    public function getDuration()
+    {
+        return $this->duration;
+    }
+
+    public function setDuration($duration)
+    {
+        $this->duration = $duration;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    public function getReleaseYear()
+    {
+        return $this->releaseYear;
+    }
+
+    public function setReleaseYear($releaseYear)
+    {
+        $this->releaseYear = $releaseYear;
+    }
+
+    // Abstract methods
+    abstract public function getProductionCost();
+    abstract public function setProductionCost($cost);
+    abstract public function getCategory();
+    abstract public function setCategory($category);
+    abstract public function showInfo();
 }
 
-//
+/**
+ * Comedy Film class
+ */
 class ComedyFilm extends Film
 {
-    public  $humorLevel;
+    private $humorLevel;
 
     public function __construct(
         $title,
@@ -49,7 +90,32 @@ class ComedyFilm extends Film
         $this->humorLevel = $humorLevel;
     }
 
-    public function showInfo(): void
+    public function setHumorLevel($level)
+    {
+        $this->humorLevel = $level;
+    }
+
+    public function getProductionCost()
+    {
+        return $this->productionCost;
+    }
+
+    public function setProductionCost($cost)
+    {
+        $this->productionCost = $cost;
+    }
+
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
+
+    public function showInfo()
     {
         echo "=== COMEDY FILM ===<br>";
         echo "Title: {$this->title}<br>";
@@ -67,7 +133,7 @@ class ComedyFilm extends Film
  */
 class ActionFilm extends Film
 {
-    public int $dangerScenesCount;
+    private $dangerScenesCount;
 
     public function __construct(
         $title,
@@ -82,7 +148,32 @@ class ActionFilm extends Film
         $this->dangerScenesCount = $dangerScenesCount;
     }
 
-    public function showInfo(): void
+    public function getDangerScenesCount()
+    {
+        return $this->dangerScenesCount;
+    }
+
+    public function getProductionCost()
+    {
+        return $this->productionCost;
+    }
+
+    public function setProductionCost($cost)
+    {
+        $this->productionCost = $cost;
+    }
+
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
+
+    public function showInfo()
     {
         echo "=== ACTION FILM ===<br>";
         echo "Title: {$this->title}<br>";
@@ -100,7 +191,7 @@ class ActionFilm extends Film
  */
 class DocumentaryFilm extends Film
 {
-    public string $topic;
+    private $topic;
 
     public function __construct(
         $title,
@@ -115,7 +206,32 @@ class DocumentaryFilm extends Film
         $this->topic = $topic;
     }
 
-    public function showInfo(): void
+    public function setTopic($topic)
+    {
+        $this->topic = $topic;
+    }
+
+    public function getProductionCost()
+    {
+        return $this->productionCost;
+    }
+
+    public function setProductionCost($cost)
+    {
+        $this->productionCost = $cost;
+    }
+
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
+
+    public function showInfo()
     {
         echo "=== DOCUMENTARY FILM ===<br>";
         echo "Title: {$this->title}<br>";
