@@ -51,14 +51,16 @@ class ComedyFilm extends Film
 
     public function showInfo(): void
     {
-        echo "=== COMEDY FILM ===<br>";
-        echo "Title: {$this->title}<br>";
-        echo "Duration: {$this->duration} minutes<br>";
-        echo "Release Year: {$this->releaseYear}<br>";
-        echo "Category: {$this->category}<br>";
-        echo "Quantity: {$this->quantity}<br>";
-        echo "Production Cost: $" . $this->productionCost . "<br>";
-        echo "Humor Level: {$this->humorLevel}<br>";
+        echo "<div class='card'>";
+        echo "<div class='card-header'><h4>Thông tin phim Hài</h4></div>";
+        echo "<div class='card-body'>";
+        echo "<p><strong>Tên phim:</strong> {$this->title}</p>";
+        echo "<p><strong>Thời lượng:</strong> {$this->duration} phút</p>";
+        echo "<p><strong>Năm sản xuất:</strong> {$this->releaseYear}</p>";
+        echo "<p><strong>Số lượng:</strong> {$this->quantity}</p>";
+        echo "<p><strong>Chi phí sản xuất:</strong> $" . number_format($this->productionCost) . "</p>";
+        echo "<p><strong>Mức độ hài hước:</strong> {$this->humorLevel}</p>";
+        echo "</div></div>";
     }
 }
 
@@ -84,14 +86,16 @@ class ActionFilm extends Film
 
     public function showInfo(): void
     {
-        echo "=== ACTION FILM ===<br>";
-        echo "Title: {$this->title}<br>";
-        echo "Duration: {$this->duration} minutes<br>";
-        echo "Release Year: {$this->releaseYear}<br>";
-        echo "Category: {$this->category}<br>";
-        echo "Quantity: {$this->quantity}<br>";
-        echo "Production Cost: $" . $this->productionCost . "<br>";
-        echo "Danger Scenes Count: {$this->dangerScenesCount}<br>";
+        echo "<div class='card'>";
+        echo "<div class='card-header'><h4>Thông tin phim Hành động</h4></div>";
+        echo "<div class='card-body'>";
+        echo "<p><strong>Tên phim:</strong> {$this->title}</p>";
+        echo "<p><strong>Thời lượng:</strong> {$this->duration} phút</p>";
+        echo "<p><strong>Năm sản xuất:</strong> {$this->releaseYear}</p>";
+        echo "<p><strong>Số lượng:</strong> {$this->quantity}</p>";
+        echo "<p><strong>Chi phí sản xuất:</strong> $" . number_format($this->productionCost) . "</p>";
+        echo "<p><strong>Số cảnh hành động:</strong> {$this->dangerScenesCount}</p>";
+        echo "</div></div>";
     }
 }
 
@@ -117,13 +121,15 @@ class DocumentaryFilm extends Film
 
     public function showInfo(): void
     {
-        echo "=== DOCUMENTARY FILM ===<br>";
-        echo "Title: {$this->title}<br>";
-        echo "Duration: {$this->duration} minutes<br>";
-        echo "Release Year: {$this->releaseYear}<br>";
-        echo "Category: {$this->category}<br>";
-        echo "Quantity: {$this->quantity}<br>";
-        echo "Production Cost: $" . $this->productionCost . "<br>";
-        echo "Topic: {$this->topic}<br>";
+        echo "<div class='card'>";
+        echo "<div class='card-header'><h4>Thông tin phim Tài liệu</h4></div>";
+        echo "<div class='card-body'>";
+        echo "<p><strong>Tên phim:</strong> {$this->title}</p>";
+        echo "<p><strong>Thời lượng:</strong> {$this->duration} phút</p>";
+        echo "<p><strong>Năm sản xuất:</strong> {$this->releaseYear}</p>";
+        echo "<p><strong>Số lượng:</strong> {$this->quantity}</p>";
+        echo "<p><strong>Chi phí sản xuất:</strong> $" . number_format($this->productionCost) . "</p>";
+        echo "<p><strong>Chủ đề:</strong> {$this->topic}</p>";
+        echo "</div></div>";
     }
 }
